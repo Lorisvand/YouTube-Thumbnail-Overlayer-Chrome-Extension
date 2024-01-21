@@ -1,7 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "YouTube Lorisifyer",
-    "description": "Add's Loris and his friends to all YouTube thumbnails",
+    "author": "Loris Van Damme",
+    "name": "YouTube overlayer",
+    "description": "Add's an overlay .png file to all YouTube thumbnails",
     "version": "2.1",
     "permissions": ["activeTab"],
     "content_scripts": [
