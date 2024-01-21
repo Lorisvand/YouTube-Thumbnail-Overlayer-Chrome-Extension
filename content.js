@@ -51,6 +51,23 @@ function addOverlay() {
     thumbnail.style.position = "relative";
 
     thumbnail.classList.add("overlay-added"); // Mark the thumbnail so it doesn't get multiple overlays
+    if (
+      !thumbnail.parentElement.parentElement.parentElement.classList.contains(
+        "miniplayer"
+      )
+    ) {
+      thumbnail.parentElement.parentElement
+        .querySelector("#details")
+        .addEventListener("mouseenter", () => {
+          overlay.style.opacity = "0";
+        });
+
+      thumbnail.parentElement.parentElement
+        .querySelector("#details")
+        .addEventListener("mouseleave", () => {
+          overlay.style.opacity = "1";
+        });
+    }
 
     thumbnail.addEventListener("mouseenter", () => {
       overlay.style.opacity = "0";
