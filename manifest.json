@@ -3,7 +3,7 @@
     "author": "Loris Van Damme",
     "name": "YouTube overlayer",
     "description": "Add's an overlay .png file to all YouTube thumbnails",
-    "version": "2.1",
+    "version": "1.0",
     "permissions": ["activeTab"],
     "content_scripts": [
       {
