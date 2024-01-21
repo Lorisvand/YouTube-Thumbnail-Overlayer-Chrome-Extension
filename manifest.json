@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "YouTube Lorisifyer",
+    "description": "Add's Loris and his friends to all YouTube thumbnails",
+    "version": "2.1",
+    "permissions": ["activeTab"],
+    "content_scripts": [
+      {
+        "matches": ["*://www.youtube.com/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": ["/images/*.png"],
+        "matches": ["<all_urls>"]
+      }
+    ],
+    "icons": {
+      "48": "./icons/icon-16.png"
+    }
+  }
+  
