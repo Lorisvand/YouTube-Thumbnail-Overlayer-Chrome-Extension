@@ -79,7 +79,8 @@ function addOverlay() {
               overlay.style.opacity = "1";
             });
         }
-      } else {
+      } else if (thumbnail.parentElement.parentElement.parentElement
+        .querySelector("#dismissible")) {
         thumbnail.parentElement.parentElement.parentElement
           .querySelector("#dismissible")
           .querySelector("#details")
