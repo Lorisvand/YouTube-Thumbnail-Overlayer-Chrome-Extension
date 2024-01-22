@@ -53,23 +53,32 @@ function addOverlay() {
     thumbnail.style.position = "relative";
 
     thumbnail.classList.add("overlay-added"); // Mark the thumbnail so it doesn't get multiple overlays
+
     if (
       !thumbnail.parentElement.parentElement.parentElement.classList.contains(
         "miniplayer"
       )
     ) {
       if (isYouTubeVideo) {
-        thumbnail.parentElement
-          .querySelector(".details")
-          .addEventListener("mouseenter", () => {
-            overlay.style.opacity = "0";
-          });
+        if (
+          thumbnail.parentElement.nodeName !=
+            "YTD-STRUCTURED-DESCRIPTION-VIDEO-LOCKUP-RENDERER" &&
+          thumbnail.parentElement.parentElement.nodeName !=
+            "YTD-REEL-ITEM-RENDERER" &&
+          thumbnail.parentElement.querySelector(".details")
+        ) {
+          thumbnail.parentElement
+            .querySelector(".details")
+            .addEventListener("mouseenter", () => {
+              overlay.style.opacity = "0";
+            });
 
-        thumbnail.parentElement
-          .querySelector(".details")
-          .addEventListener("mouseleave", () => {
-            overlay.style.opacity = "1";
-          });
+          thumbnail.parentElement
+            .querySelector(".details")
+            .addEventListener("mouseleave", () => {
+              overlay.style.opacity = "1";
+            });
+        }
       } else {
         thumbnail.parentElement.parentElement.parentElement
           .querySelector("#dismissible")
