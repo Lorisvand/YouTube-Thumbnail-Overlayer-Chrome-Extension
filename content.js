@@ -56,13 +56,15 @@ function addOverlay() {
         "miniplayer"
       )
     ) {
-      thumbnail.parentElement.parentElement
+      thumbnail.parentElement.parentElement.parentElement
+        .querySelector("#dismissible")
         .querySelector("#details")
         .addEventListener("mouseenter", () => {
           overlay.style.opacity = "0";
         });
 
-      thumbnail.parentElement.parentElement
+      thumbnail.parentElement.parentElement.parentElement
+        .querySelector("#dismissible")
         .querySelector("#details")
         .addEventListener("mouseleave", () => {
           overlay.style.opacity = "1";
