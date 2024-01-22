@@ -1,4 +1,6 @@
 const imagesArray = [];
+const url = window.location.href;
+const isYouTubeVideo = url.includes("youtube.com/watch");
 
 for (let i = 1; i <= 23; i++) {
   imagesArray.push(`${i}.png`);
@@ -56,19 +58,33 @@ function addOverlay() {
         "miniplayer"
       )
     ) {
-      thumbnail.parentElement.parentElement.parentElement
-        .querySelector("#dismissible")
-        .querySelector("#details")
-        .addEventListener("mouseenter", () => {
-          overlay.style.opacity = "0";
-        });
+      if (isYouTubeVideo) {
+        thumbnail.parentElement
+          .querySelector(".details")
+          .addEventListener("mouseenter", () => {
+            overlay.style.opacity = "0";
+          });
 
-      thumbnail.parentElement.parentElement.parentElement
-        .querySelector("#dismissible")
-        .querySelector("#details")
-        .addEventListener("mouseleave", () => {
-          overlay.style.opacity = "1";
-        });
+        thumbnail.parentElement
+          .querySelector(".details")
+          .addEventListener("mouseleave", () => {
+            overlay.style.opacity = "1";
+          });
+      } else {
+        thumbnail.parentElement.parentElement.parentElement
+          .querySelector("#dismissible")
+          .querySelector("#details")
+          .addEventListener("mouseenter", () => {
+            overlay.style.opacity = "0";
+          });
+
+        thumbnail.parentElement.parentElement.parentElement
+          .querySelector("#dismissible")
+          .querySelector("#details")
+          .addEventListener("mouseleave", () => {
+            overlay.style.opacity = "1";
+          });
+      }
     }
 
     thumbnail.addEventListener("mouseenter", () => {
