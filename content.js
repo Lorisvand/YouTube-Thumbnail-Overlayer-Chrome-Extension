@@ -14,7 +14,7 @@ function getRandomImage() {
 
 function addOverlay() {
   const thumbnails = document.querySelectorAll(
-    "ytd-thumbnail:not(.overlay-added, .ytd-video-preview, .ytd-rich-grid-slim-media)"
+    "ytd-thumbnail:not(.overlay-added, .ytd-video-preview, .ytd-rich-grid-slim-media, .ytd-reel-item-renderer)"
   );
 
   const duration = document.querySelectorAll(
@@ -64,8 +64,6 @@ function addOverlay() {
         if (
           thumbnail.parentElement.nodeName !=
             "YTD-STRUCTURED-DESCRIPTION-VIDEO-LOCKUP-RENDERER" &&
-          thumbnail.parentElement.parentElement.nodeName !=
-            "YTD-REEL-ITEM-RENDERER" &&
           thumbnail.parentElement.querySelector(".details")
         ) {
           thumbnail.parentElement
@@ -93,7 +91,9 @@ function addOverlay() {
           });
       } else if (
         thumbnail.parentElement.parentElement.parentElement.querySelector(
-          "#dismissible"
+          "#dismissible" &&
+            thumbnail.parentElement.parentElement.nodeName !=
+              "YTD-REEL-ITEM-RENDERER"
         )
       ) {
         thumbnail.parentElement.parentElement.parentElement
@@ -134,4 +134,4 @@ if (document.readyState === "loading") {
 }
 
 // This will re-apply overlays when new content is loaded without refreshing the page
-setInterval(addOverlay, 1000);
+setInterval(addOverlay, 100);
