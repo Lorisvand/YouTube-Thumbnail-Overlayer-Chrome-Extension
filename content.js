@@ -2,7 +2,7 @@ const imagesArray = [];
 const url = window.location.href;
 const isYouTubeVideo = url.includes("youtube.com/watch");
 
-for (let i = 1; i <= 23; i++) {
+for (let i = 1; i <= 24; i++) {
   imagesArray.push(`${i}.png`);
 }
 
@@ -79,7 +79,28 @@ function addOverlay() {
               overlay.style.opacity = "1";
             });
         }
-      } else {
+      } else if (
+        (thumbnail.parentElement.parentElement.parentElement.nodeName =
+          "YTD-VIDEO-RENDERER")
+      ) {
+        document
+          .querySelector("ytd-video-renderer")
+          .addEventListener("mouseeneter", () => {
+            overlay.style.opacity = "0";
+          });
+        document
+          .querySelector("ytd-video-renderer")
+          .addEventListener("mouseleave", () => {
+            overlay.style.opacity = "1";
+          });
+      } else if (
+        thumbnail.parentElement.parentElement.parentElement.querySelector(
+          "#dismissible" &&
+            thumbnail.parentElement.parentElement.parentElement
+              .querySelector("#dismissible")
+              .querySelector("#details")
+        )
+      ) {
         thumbnail.parentElement.parentElement.parentElement
           .querySelector("#dismissible")
           .querySelector("#details")
