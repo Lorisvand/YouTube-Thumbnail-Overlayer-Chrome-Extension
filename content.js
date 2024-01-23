@@ -1,6 +1,7 @@
 const imagesArray = [];
 const url = window.location.href;
 const isYouTubeVideo = url.includes("youtube.com/watch");
+const isYouTubeSearch = url.includes("https://www.youtube.com/results");
 
 for (let i = 1; i <= 24; i++) {
   imagesArray.push(`${i}.png`);
@@ -79,10 +80,7 @@ function addOverlay() {
               overlay.style.opacity = "1";
             });
         }
-      } else if (
-        (thumbnail.parentElement.parentElement.parentElement.nodeName =
-          "YTD-VIDEO-RENDERER")
-      ) {
+      } else if (isYouTubeSearch) {
         document
           .querySelector("ytd-video-renderer")
           .addEventListener("mouseeneter", () => {
@@ -95,10 +93,7 @@ function addOverlay() {
           });
       } else if (
         thumbnail.parentElement.parentElement.parentElement.querySelector(
-          "#dismissible" &&
-            thumbnail.parentElement.parentElement.parentElement
-              .querySelector("#dismissible")
-              .querySelector("#details")
+          "#dismissible"
         )
       ) {
         thumbnail.parentElement.parentElement.parentElement
