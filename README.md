@@ -1,6 +1,6 @@
 This Google Chrome extension add's an overlay image to every YouTube thumbnail.
 
-You have to create an "images" folder with every .png (1280x720 resolution) numbered starting with 1.
+You have to fill the "images" folder with every .png (1280x720 resolution) numbered starting with 1.
 Also don't forget to adjust the loop at the start of content.js to the max number of images (now 23).
 
-Also make a folder "icons" and add a .png with the name "icon-16.png".
+Also fill the "icons" folder and add a .png with the name "icon-16.png".
