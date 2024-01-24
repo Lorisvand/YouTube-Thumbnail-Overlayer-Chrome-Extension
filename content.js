@@ -91,9 +91,7 @@ function addOverlay() {
           });
       } else if (
         thumbnail.parentElement.parentElement.parentElement.querySelector(
-          "#dismissible" &&
-            thumbnail.parentElement.parentElement.nodeName !=
-              "YTD-REEL-ITEM-RENDERER"
+          "#dismissible"
         )
       ) {
         thumbnail.parentElement.parentElement.parentElement
