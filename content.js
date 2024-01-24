@@ -3,7 +3,7 @@ const url = window.location.href;
 const isYouTubeVideo = url.includes("youtube.com/watch");
 const isYouTubeSearch = url.includes("https://www.youtube.com/results");
 
-for (let i = 1; i <= 28; i++) {
+for (let i = 1; i <= 32; i++) {
   imagesArray.push(`${i}.png`);
 }
 
