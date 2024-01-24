@@ -3,7 +3,7 @@ const url = window.location.href;
 const isYouTubeVideo = url.includes("youtube.com/watch");
 const isYouTubeSearch = url.includes("https://www.youtube.com/results");
 
-for (let i = 1; i <= 24; i++) {
+for (let i = 1; i <= 28; i++) {
   imagesArray.push(`${i}.png`);
 }
 
@@ -96,14 +96,12 @@ function addOverlay() {
       ) {
         thumbnail.parentElement.parentElement.parentElement
           .querySelector("#dismissible")
-          .querySelector("#details")
           .addEventListener("mouseenter", () => {
             overlay.style.opacity = "0";
           });
 
         thumbnail.parentElement.parentElement.parentElement
           .querySelector("#dismissible")
-          .querySelector("#details")
           .addEventListener("mouseleave", () => {
             overlay.style.opacity = "1";
           });
