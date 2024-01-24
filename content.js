@@ -14,7 +14,7 @@ function getRandomImage() {
 
 function addOverlay() {
   const thumbnails = document.querySelectorAll(
-    "ytd-thumbnail:not(.overlay-added, .ytd-video-preview, .ytd-rich-grid-slim-media, .ytd-reel-item-renderer)"
+    "ytd-thumbnail:not(.overlay-added, .ytd-video-preview, .ytd-rich-grid-slim-media, .ytd-reel-item-renderer, .ytd-movie-renderer)"
   );
 
   const duration = document.querySelectorAll(
