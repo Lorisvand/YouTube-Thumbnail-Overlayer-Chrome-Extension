@@ -3,7 +3,7 @@ const url = window.location.href;
 const isYouTubeVideo = url.includes("youtube.com/watch");
 const isYouTubeSearch = url.includes("https://www.youtube.com/results");
 
-for (let i = 1; i <= 32; i++) {
+for (let i = 1; i <= 37; i++) {
   imagesArray.push(`${i}.png`);
 }
 
@@ -19,6 +19,10 @@ function addOverlay() {
 
   const duration = document.querySelectorAll(
     "ytd-thumbnail-overlay-time-status-renderer"
+  );
+
+  const watchTime = document.querySelectorAll(
+    "ytd-thumbnail-overlay-resume-playback-renderer"
   );
 
   thumbnails.forEach((thumbnail) => {
@@ -117,6 +121,11 @@ function addOverlay() {
   });
 
   duration.forEach((durationTime) => {
+    durationTime.style.position = "absolute";
+    durationTime.style.zIndex = "15";
+  });
+
+  watchTime.forEach((durationTime) => {
     durationTime.style.position = "absolute";
     durationTime.style.zIndex = "15";
   });
